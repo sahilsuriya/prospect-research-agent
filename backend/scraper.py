@@ -12,7 +12,8 @@ from rapidfuzz import fuzz
 import google.generativeai as genai
 
 
-API_KEY = "AIzaSyC2wmMXMPVmsIjMBLqGhl3nqOZT8VkdMB8"
+load_dotenv()
+API_KEY = os.getenv("GEMINI_API_KEY")
 
 genai.configure(api_key=API_KEY)
 
