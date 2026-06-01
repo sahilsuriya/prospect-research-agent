@@ -5,7 +5,6 @@ import time
 import ast
 import os
 from dotenv import load_dotenv
-import google.genai as genai
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
 from rapidfuzz import fuzz
@@ -14,7 +13,7 @@ import google.generativeai as genai
 
 load_dotenv()
 API_KEY = os.getenv("GEMINI_API_KEY")
-
+print("API Key Found:", bool(API_KEY))
 genai.configure(api_key=API_KEY)
 
 model = genai.GenerativeModel("gemini-3.5-flash")
