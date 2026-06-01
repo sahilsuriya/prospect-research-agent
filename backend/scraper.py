@@ -3,6 +3,8 @@ import json
 import re
 import time
 import ast
+import os
+from dotenv import load_dotenv
 import google.genai as genai
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
