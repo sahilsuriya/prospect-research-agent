@@ -12,6 +12,8 @@ function App() {
 
   const [allResults,setAllResults] = useState([]);
 
+  const API_URL = "https://prospect-research-agent-wtzj.onrender.com";
+
   const enrichCompany = async (url) => {
 
     try {
@@ -19,7 +21,7 @@ function App() {
       setLoading(true);
 
       const response = await axios.post(
-        "http://localhost:8000/enrich",
+        `${API_URL}/enrich`,
         { url }
       );
 
@@ -40,7 +42,7 @@ function App() {
     try {
 
       const response = await axios.get(
-        "http://localhost:8000/results"
+        `${API_URL}/results`
       );
 
       setAllResults(response.data);
